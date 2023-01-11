@@ -71,8 +71,6 @@ public class wordle1 {
                         }
                     }
                 }
-
-
                 System.out.println("Alphabet: ");
                 System.out.print("|");
                 for(char z : alphabetForSolution) {
