@@ -94,7 +94,7 @@ public class Wordle {
     //checks the code
     public char[] guessCheck(String guess)
     {
-        char[] solution = new char[5];
+        char[] solution = new char[5];   //new means instantiation 
         char[] guessInArray = convertToChar(guess);
         char[] actualWord = convertToChar(getWord());
 
