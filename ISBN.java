@@ -30,8 +30,26 @@ public class ISBN {
      */
     public static void calculateISBN10(int[] isbn) {
 
-        /* WRITE YOUR CODE HERE */
+        //check digit
+        //step 1
+        int sumOfProducts = 0;
 
+        for(int i = 0; i < isbn.length-1; i++) {
+            sumOfProducts = (isbn[i] * (10-i)) + sumOfProducts;
+        }
+
+        //step 2
+        int rem = sumOfProducts % 11;
+
+        //step 3
+        int diff = 11 - rem;
+
+        //step 4
+        int checkDigit = diff % 11;
+
+        if(checkDigit != isbn[isbn.length-1]) {
+            isbn[isbn.length-1] = checkDigit;
+        }
     }
 
     /**
@@ -44,8 +62,45 @@ public class ISBN {
      */
     public static int[] calculateISBN13(int[] shortIsbn) {
 
-        /* WRITE YOUR CODE HERE */
+        int sumOfProducts = 0;
+        int num = 0;
+        int checkDigit = 0;
 
+        //step 1
+        int[] isbn13 = new int[13];
+        isbn13[0] = 9;
+        isbn13[1] = 7;
+        isbn13[2] = 8;
+
+        for(int i = 3; i < isbn13.length; i++) {
+            isbn13[i] = shortIsbn[i-3];
+        }
+        
+        //step 2
+        for(int i = 0; i < isbn13.length - 1; i++) {
+            
+            if(i % 2 == 0) {
+                num = 1;
+            } else if(i % 2 != 0) {
+                num = 3;
+            }
+
+            sumOfProducts = sumOfProducts + (isbn13[i] * num);
+
+        }
+
+        //step 3
+        int rem = sumOfProducts % 10;
+
+        //step 4
+        if(rem == 0) {
+            checkDigit = 0;
+        } else if(rem != 0) {
+            checkDigit = 10 - rem;
+            isbn13[isbn13.length-1] = checkDigit;
+        }
+
+        return isbn13;
     }
 
 

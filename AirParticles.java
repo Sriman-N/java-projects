@@ -18,9 +18,14 @@ public class AirParticles {
     
     public static double findHighestLevel (double[] communities) {
 
-        // WRITE YOUR CODE HERE
+        double first_double = communities[0];
+        for(int i = 0; i < communities.length; i++) {
+            if(first_double <  communities[i]) {
+                first_double = communities[i];
+            }
+        }
 	
-        return 0.0; // replace this line
+        return first_double; // replace this line
     }
 
     /*
@@ -30,7 +35,7 @@ public class AirParticles {
      */
     public static void main (String[] args) {
 
-        int  numberOfLines = StdIn.readInt();   // the the first integer value
+        int  numberOfLines = StdIn.readInt();   // the first integer value
         double[] pm2Levels = new double[numberOfLines];
         
         int i = 0;                              // used to index the array
@@ -41,7 +46,7 @@ public class AirParticles {
         }
 
         // calls findHighestLevel function passing as the argument pm2Levels array
-        double highestLevel = findHighestLevel(pm2Levels);   
+        double highestLevel = findHighestLevel(pm2Levels);
 
         StdOut.println("Highest PM2.5 level is " + highestLevel);
     }

@@ -13,7 +13,6 @@ public class BusStop {
         }
 
         int k = 0;
-
         while(k < array.length) {
             if(last_num == array[k]) {
                 location = k + 1;
