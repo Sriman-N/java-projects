@@ -1,28 +1,50 @@
 public class test {
     public static void main(String[] args) {
-        int[] isbn = {0, 7, 4, 3, 2, 7, 3, 5, 6, 0};
-        int sumOfProducts = 0;
 
-        for(int i = 0; i < isbn.length-1; i++) {
-            sumOfProducts = (isbn[i] * (10-i)) + sumOfProducts;
-        }
 
-        //step 2
-        int rem = sumOfProducts % 11;
+        String sequence = "AGATAGATAGATAGATAAACCCAATGAATGAATGGGGGGTATCTATCTATCTATC";
+        System.out.println(sequence.length());
+        String STR = "TATC";
+        int numOfRepeats = 0;
 
-        //step 3
-        int diff = 11 - rem;
 
-        //step 4
-        int checkDigit = diff % 11;
+        for(int i = 0; i < sequence.length()-4; i++) {
+            if(sequence.substring(i, i+1).equals(STR.substring(0, 1))) {
+                if(sequence.substring(i+1, i+STR.length()).equals(STR.substring(1))) {
+                    numOfRepeats++;
+                    i+=STR.length();
+                }
+            }   
+        } 
 
-        if(checkDigit != isbn[isbn.length-1]) {
-            isbn[isbn.length-1] = checkDigit;
-        }
+        System.out.println(numOfRepeats);
 
-        for(int i = 0; i < isbn.length; i++) {
-            System.out.print(isbn[i]);
-        }
-        
+        int numOfRepeats1 = 0;
+
+        for(int i = 0; i < sequence.length()-STR.length(); i++) {
+            if(sequence.substring(i, i+STR.length()).equals(STR.substring(0))) {
+                numOfRepeats1++;
+                i+=STR.length();
+            }
+        } 
+
+        System.out.println(numOfRepeats1);
+
+        int i = 0;
+        int numOfRepeats2 = 0;
+        while(i < sequence.length()-STR.length()) {
+            if(sequence.substring(i, i+1).equals(STR.substring(0, 1))) {
+                if(sequence.substring(i+1, i+STR.length()).equals(STR.substring(1))) {
+                    numOfRepeats2++;
+                    i+=STR.length()-1;
+                }
+            } else { 
+                i++;
+            }
+            i++;
+        } 
+
+        System.out.println(numOfRepeats2);
     }
 }
+
