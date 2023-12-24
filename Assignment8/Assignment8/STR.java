@@ -1,5 +1,3 @@
-package Assignment8.Assignment8;
-
 /**
  * 
  * This class represents the Short Tandem Repeats. An STR is a short 

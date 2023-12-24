@@ -1,4 +1,4 @@
-package Assignment8.Assignment8; /******************************************************************************
+/******************************************************************************
  *  Compilation:  javac StdOut.java
  *  Execution:    java StdOut
  *  Dependencies: none

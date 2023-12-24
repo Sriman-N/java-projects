@@ -1,5 +1,3 @@
-package Assignment8.Assignment8;
-
 public class test2 {
     public static void main(String[] args) {
         String sequence = "AGATAGATAGATAGATAAACCCAATGAATGAATGGGGGGTATCTATCTATCTATC";

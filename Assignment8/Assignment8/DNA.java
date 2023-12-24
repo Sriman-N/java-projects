@@ -1,5 +1,3 @@
-package Assignment8.Assignment8;
-
 import java.util.ArrayList;
 
 /**
@@ -235,12 +233,10 @@ public class DNA {
         for(int i = 0; i < s1.length; i++) {
             if(s1[i] == s2[i]) {
                 return true;
-            } else {
-                return false;
             }
         }
 
-        return true; // update the return value
+        return false;// update the return value
     }
 
     /**
@@ -293,7 +289,7 @@ public class DNA {
         for ( int i = 0; i < firstParent.length; i++ ) {
 
             if ( !(firstParent[i].equals(inheritedFromFirstParent[i]) && secondParent[i].equals(inheritedFromSecondParent[i])) ) {
-                return false; // Returns false if there is a discrepency
+                return false; // Returns false if there is a discrepancy
             }
         }
         return true; 
@@ -354,8 +350,25 @@ public class DNA {
                         parentList.add(possibleParent2.get(p2));
                     }
                 }
+
+                /*if ( !possibleParent1.get(p1).equals(possibleParent2.get(p2)) ) {
+
+                    if ( punnetSquare(possibleParent2.get(p2).getS2_STRs(), S2_STRs, possibleParent1.get(p1).getS2_STRs(), S1_STRs)) {
+                        parentList.add(possibleParent1.get(p1));
+                        parentList.add(possibleParent2.get(p2));
+                    } else if (punnetSquare(possibleParent2.get(p2).getS1_STRs(), S1_STRs, possibleParent1.get(p1).getS1_STRs(), S1_STRs)) {
+                        parentList.add(possibleParent1.get(p1));
+                        parentList.add(possibleParent2.get(p2));
+                    } else if (punnetSquare(possibleParent2.get(p2).getS2_STRs(), S2_STRs, possibleParent1.get(p1).getS2_STRs(), S2_STRs)) {
+                        parentList.add(possibleParent1.get(p1));
+                        parentList.add(possibleParent2.get(p2));
+                    } else if (punnetSquare(possibleParent2.get(p2).getS1_STRs(), S2_STRs, possibleParent1.get(p1).getS1_STRs(), S1_STRs)) {
+                        parentList.add(possibleParent1.get(p1));
+                        parentList.add(possibleParent2.get(p2));
+                    }
+                } */
             }
-        }
+         }
         return parentList;
     }
 
